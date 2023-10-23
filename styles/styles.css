@@ -46,12 +46,14 @@ body {
 .navigation-logo {
   width: 140px;
   margin-right: 28px;
+  z-index: 1;
 }
 
 .navigation {
   display: flex;
   width: 1200px;
   margin: 0 auto;
+  height: 64px;
 }
 
 .navigation-list {
@@ -259,6 +261,7 @@ body {
 .button {
   text-transform: uppercase;
   text-decoration-line: none;
+  text-align: center;
   color: #ffffff;
   font-size: 16px;
   font-weight: 700;
@@ -269,6 +272,11 @@ body {
 .newsletter {
   padding: 96px 258px;
   text-align: center;
+}
+
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 452px 233px;
 }
 
 .newsletter-title {
@@ -336,7 +344,7 @@ body {
 
 .hotels-filter {
   width: 1060px;
-  height: 306px;
+  min-height: 306px;
   padding: 70px;
   padding-top: 35px;
   background-image: url("../images/filter-background.jpg");
@@ -379,6 +387,17 @@ body {
   padding:  50px 70px 60px;
 }
 
+.results-wrap {
+  display: flex;
+  width: 1060px;
+}
+
+.how-to-show {
+  display: flex;
+  width: 522px;
+  margin-left: auto;
+}
+
 .catalog-filter-list {
   margin: 0;
   padding: 0;
@@ -386,8 +405,22 @@ body {
 }
 
 .appearance {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   width: 160px;
   margin-left: 70px;
+}
+
+.appearance-type {
+  min-width: 24px;
+  min-height: 20px;
+  margin-right: 8px;
+}
+
+.appearance-type:nth-child(3n) {
+  margin: 0;
 }
 
 .select-control {
@@ -396,8 +429,9 @@ body {
 }
 
 .hotel-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  gap: 20px;
   list-style-type: none;
   width: 1060px;
   padding: 0;
@@ -405,11 +439,15 @@ body {
 }
 
 .hotel-card {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  column-gap: 20px;
+  row-gap: 16px;
   width: 340px;
-}
-
-.hotel-card:not(:nth-child(3n )){
-  margin-right: 20px;
+  padding: 20px;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .catalog-filter-group {
@@ -479,9 +517,29 @@ body {
   background-repeat: no-repeat;
  } */
 
+.hotel-card-link {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -1;
+}
+
 .hotel-card-title {
+  margin: 0;
+  margin-top: 16px;
   font-size: 24px;
   line-height: 28px;
+}
+
+.hotel-price {
+  justify-self: end;
+
+}
+
+.rating-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .favourite-button {
@@ -494,6 +552,7 @@ body {
 }
 
 .rating {
+  text-align: center;
   color: #333333;
   font-size: 16px;
   line-height: 20px;
