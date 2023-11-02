@@ -580,8 +580,24 @@ body {
 }
 
 .breadcrumbs-item {
+  position: relative;
   min-width: 13px;
   margin-right: 10px;
+  font-size: 16px;
+}
+
+.breadcrumbs-item:not(:last-child) {
+  margin-right: 27px;
+}
+
+.breadcrumbs-item:not(:last-child)::after {
+  content: url("../images/arrow.svg");
+  position: absolute;
+  right: -17px;
+}
+
+.breadcrumbs-link.home::before {
+  content: url("../images/main-logo.svg");
 }
 
 .catalog-header-title {
@@ -680,15 +696,6 @@ body {
   font-size: 60px;
   font-weight: 700;
   line-height: 78px;
-}
-
-.breadcrumbs-link.home {
-  background-image: url("../images/main-logo.svg");
-  background-repeat: no-repeat;
-}
-
-.breadcrumbs-item {
-  font-size: 16px;
 }
 
 .catalog-filter-title {
