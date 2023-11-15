@@ -313,7 +313,7 @@ body {
   background-color: rgba(0, 0, 0, 0.30);
 }
 
-.advantages .dark .advantages-title::after {
+.dark .advantages-title::after {
   background-color: rgba(255, 255, 255, 0.30);
 }
 
@@ -399,24 +399,6 @@ body {
   margin: 0;
   margin-bottom: 54px;
 }
-
-
-/* тоже пока не нужно */
-/* .living {
-  background-image: url("../images/advantage-icon-1.svg");
-  background-repeat: no-repeat;
-}
-
-.food {
-  background-image: url("../images/advantage-icon-2.svg");
-  background-repeat: no-repeat;
-}
-
-.presents {
-  background-image: url("../images/advantage-icon-3.svg");
-  background-repeat: no-repeat;
-} */
-
 
 .newsletter {
   display: flex;
@@ -1130,7 +1112,7 @@ input[type="email"] {
 }
 
 .modal-search {
-  width: 588px;
+  width: 577px;
 }
 
 .modal-close-button {
@@ -1165,7 +1147,7 @@ input[type="email"] {
 }
 
 .modal-close-button svg {
-  margin: 20px;
+  margin: 19px;
   fill: #000000;
 }
 
@@ -1174,7 +1156,7 @@ input[type="email"] {
   margin-bottom: 64px;
   margin-right: 234px;
   width: 414px;
-  font-family: "PT Sans";
+  font-family: "PT Sans", sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 36px;
@@ -1186,18 +1168,13 @@ input[type="email"] {
   margin: 0;
   margin-bottom: 48px;
   margin-right: auto;
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
 .field-group:last-child {
   margin-right: 0;
-}
-
-.field-label {
-  display: flex;
-  width: 100%;
-  height: 100%;
 }
 
 .people-amount {
@@ -1222,43 +1199,44 @@ input[type="email"] {
   font-weight: 700;
   line-height: 24px;
   width: 390px;
-  box-sizing: border-box;
-  border: 3px solid transparent;
   background-color: #F2F2F2;
+  border: none;
   outline: none;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.search-date:hover input,
-.search-date:hover button,
-.search-date input:focus,
-.search-date button:focus {
+.date-group{
+  position: relative;
+}
+
+.search-date-input {
+	background:url("../images/calendar.svg") #F2F2F2 no-repeat 95% 50%;
+}
+
+
+.search-date-input:hover,
+.search-date-input:focus {
   background-color: #E6E6E6;
 }
 
-.search-date input:focus {
-  border: 3px solid #83B3D3;
-  border-right: none;
+.search-date-input:focus {
+  outline: 3px solid #83B3D3;
 }
 
-.search-date button:focus {
-  border: 3px solid #83B3D3;
-  border-left: none;
-}
-
-.search-date {
-  position: relative;
-  box-sizing: border-box;
-  border: 3px solid transparent;
-}
-
-.search-date::after {
+.date-group::after {
   position: absolute;
-  top: 58px;
-  left: 27%;
-  content: "Сообщение об ошибке.";
-  line-height: 20px;
+  left: 30%;
+  top: 50px;
+  font-size: 16px;
+  line-height: 21px;
+  content: "Мы не можем отправить вас в прошлое.";
   color: #FF5757;
+}
+
+.date-group:last-of-type::after{
+  content: "На эти даты есть свободные номера. Пока есть.";
+  color: #000000;
 }
 
 .people-amount .search-form-field {
@@ -1272,17 +1250,21 @@ input[type="email"] {
 }
 
 .people-amount .field-name {
-  margin-right: 46px;
+  margin-right: 56px;
 }
 
 .field-group:last-child .field-name {
-  margin-right: 76px;
+  margin-right: 10px;
 }
 
 .people-amount .search-form-field::-webkit-outer-spin-button,
 .people-amount .search-form-field::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
+}
+
+.quantity {
+  display: inline-flex;
 }
 
 .button-minus,
@@ -1371,39 +1353,23 @@ input[type="email"] {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.calendar-open-button {
-  padding-right: 20px;
-  box-sizing: border-box;
-  border: 3px solid transparent;
-  outline: none;
-  border-radius: 0 4px 4px 0;
-  background-color: #F2F2F2;
-  cursor: pointer;
-}
-
-.calendar-open-button svg{
-  width: 16px;
-  padding: 3px 2px;
-  fill: black;
-  opacity: 0.3;
+.form-label {
+  margin-right: 76px;
 }
 
 .tooltip {
   position: absolute;
-  margin-top: 60px;
-  margin-left: -40px;
+  margin: 0;
+  margin-top: -2px;
 }
 
 .tooltip-toggle {
+  border: none;
+  margin: 0;
+  display: block;
   width: 30px;
   height: 30px;
-  align-self: center;
-  border: none;
   padding: 3px;
-  margin-top: -47px;
-  margin-left: 95px;
-  margin-bottom: 20px;
-  display: block;
   background-color: transparent;
   background-image: url('../images/kids-info.svg');
   background-repeat: no-repeat;
@@ -1413,9 +1379,11 @@ input[type="email"] {
 
 .tooltip-text {
   position: relative;
+  left: -40%;
+  top: 10px;
   background-color: #333333;
   color: #ffffff;
-  font-family: "PT Sans";
+  font-family: "PT Sans", sans-serif;
   font-size: 16px;
   line-height: 20px;
   padding: 18px;
@@ -1432,7 +1400,7 @@ input[type="email"] {
   height: 9px;
   position: absolute;
   bottom: 99%;
-  left: 100px;
+  left: 107px;
 }
 
 .tooltip-toggle:focus {
