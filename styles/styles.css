@@ -272,6 +272,7 @@ body {
   flex-direction: column;
   margin: 0 auto;
   padding: 69px 15px;
+  margin-bottom: 21px;
 }
 
 .advantages-info .main-info {
@@ -1070,7 +1071,9 @@ input[name="max-price"] {
 }
 
 .pagination-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #82b3d3;
   margin: 0 auto;
   border-radius: 4px;
